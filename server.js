@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const job = require('./cron.js');
 const brandRoute = require("./routes/brand.routes");
 const deviceRoute = require("./routes/device.routes");
 
@@ -7,6 +8,8 @@ const app = express();
 
 // Middleware for parsing JSON request bodies
 app.use(express.json());
+
+job.start();
 
 // Define routes
 app.use("/api/brands", brandRoute);
