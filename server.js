@@ -9,7 +9,7 @@ const app = express();
 // Middleware for parsing JSON request bodies
 app.use(express.json());
 
-job.start();
+// job.start();
 
 // Define routes
 app.use("/api/brands", brandRoute);
