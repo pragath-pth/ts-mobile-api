@@ -3,6 +3,7 @@ const express = require('express');
 const job = require('./cron.js');
 const brandRoute = require("./routes/brand.routes");
 const deviceRoute = require("./routes/device.routes");
+const globalRoute = require("./routes/global.routes");
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(express.json());
 // Define routes
 app.use("/api/brands", brandRoute);
 app.use("/api/device", deviceRoute);
+app.use("/api/global", globalRoute);
 
 // Routes
 app.get("/", (req, res) => {
